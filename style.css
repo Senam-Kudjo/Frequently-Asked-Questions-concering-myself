@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, beige, aquamarine, indigo);
+}
+
+.faqContainer {
+    background-color: white;
+    height: auto;
+    width: 65%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: 0.05s;
+
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+#faqTitle {
+    color: grey;
+    text-align: center;
+    height: 50px;
+    padding-top: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.questions {
+    height: 40px;
+    padding-top: 10px;
+    border-bottom: 1px solid grey;
+    padding-left: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+}
+
+.questions::after {
+    content: "+";
+    font-size: 22px;
+    width: 100%;
+}
+
+.answers {
+    padding-left: 10px;
+    padding-top: 10px;
+    overflow: hidden;
+    width: 100%;
+    line-height: 25px;
+    height: 0;
+    transition: 0.5s;
+    color: grey;
+}
+
+.qnaContainer.active .answers {
+    height: auto;
+}
+
+.qnaContainer.active .questions {
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.qnaContainer.active .questions::after {
+    content: "-";
+    font-size: 22px;
+    transition: 0.5s;
+}
